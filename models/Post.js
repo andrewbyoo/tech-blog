@@ -24,5 +24,12 @@ Post.init(
       },
       onDelete: 'cascade'
     }
+  },
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'post'
   }
 )
