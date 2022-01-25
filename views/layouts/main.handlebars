@@ -14,6 +14,11 @@
   </header>
   <nav>
     <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    {{!-- Add condition to show when not logged in --}}
+    <a href="/login">Login</a>
+    {{!-- Add condition to show when logged in --}}
+    <a href="/logout">Logout</a>
   </nav>
   <main>
     {{{body}}}
