@@ -1,12 +1,3 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
-  line-height: 150%;
-  color: #114673;
-}
-
 /* Sets web page background color and general font with google fonts a single built-in font as a fallback */
 body {
     background-color: #A4CDD6;
