@@ -38,3 +38,9 @@ header h1, nav a {
     color: #fff;
     margin: 0px 5px;
 }
+
+/* Sets a glowing effect on text on hover */
+nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
