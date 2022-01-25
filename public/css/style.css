@@ -14,13 +14,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 17px;
     z-index: 99;
-}
-
-/* Sets font size for personal name */
-header h1 {
-    font-size: 35px;
 }
 
 /* Removes underline on links, sets text color, and margin size */
