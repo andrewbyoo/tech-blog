@@ -1,33 +1,33 @@
 /* Sets web page background color and general font with google fonts a single built-in font as a fallback */
 body {
-    background-color: #A4CDD6;
-    font-family: Source Sans Pro, Work Sans, monospace;
+  background-color: #A4CDD6;
+  font-family: Source Sans Pro, Work Sans, monospace;
 }
 
 /* Sets font, size, color, text positioning, and font size / Also sets position to stay on page and appear on top of any other elements */
 header {
-    font-family: Montserrat, Roboto Slab, Open Sans, sans-serif;
-    padding: 15px;
-    background-color: #376F7B;
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
+  font-family: Montserrat, Roboto Slab, Open Sans, sans-serif;
+  padding: 15px;
+  background-color: #376F7B;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
 }
 
 /* Removes underline on links, sets text color, and margin size */
-header h1, a {
-    text-decoration: none;
-    color: #fff;
-    margin: 0px 5px;
+header h1, .nav-links {
+  text-decoration: none;
+  color: #fff;
+  margin: 0px 5px;
 }
 
 /* Sets a glowing effect on text on hover */
-a:hover {
-    color: #fff;
-    text-shadow: 0 0 5px #fff;
+.nav-links:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
 }
 
 .login-card {
@@ -41,4 +41,8 @@ a:hover {
   border-width: thick;
   background-color: #376F7B;
   color: #e3e4e3;
+}
+
+.personal-posts {
+  color: #376F7B;
 }
