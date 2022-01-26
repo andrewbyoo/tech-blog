@@ -31,9 +31,9 @@ nav a:hover {
 }
 
 .login-card {
-  margin: 0 0 20px 0;
-  flex: 0 0 50%;
-  max-width: 50%;
+  margin: 15px auto;
+  flex: 0 0 99%;
+  max-width: 95%;
   padding: 5px;
   border: 3px solid #182c23;
   border-radius: 0.3rem;
