@@ -1,25 +1,30 @@
-<div class="p-4">
-  <div class="card">
-    <div class="card-header">
+<div class='p-4 row'>
+  <div class='card col-12 col-md-8'>
+    <div class='card-header row'>
       <h3>Got something to post? Post it here!</h3>
     </div>
-    <div class="card-body">
+    <div class='card-body'>
       <form>
-        <label for="title">Title:</label>
-        <textarea id="title" rows="1" class="form-input"></textarea>
-        <label for="post_content">Content:</label>
-        <textarea id="post_content" rows="3" class="form-input"></textarea>
-        <input type="submit" class="w-100">
+        <label for='title'>Title:</label>
+        <textarea id='title' rows='1' class='form-input'></textarea>
+        <label for='post_content'>Content:</label>
+        <textarea id='post_content' rows='3' class='form-input'></textarea>
+        <input type='submit' class='w-100'>
       </form>
     </div>
   </div>
 
   {{!-- Loads a card for each post in the database --}}
-  {{#each posts as |post|}}
-  {{> post-cards}}
-  {{else}}
-  <div class='card'>
-    <p class='text-center'>There are currently no posts. Be the first one!</p>
+  <div class='col-12 col-md-4'>
+    <h3>Personal Posts:</h3>
+    <ul>
+      {{#if posts.length}}
+      {{#each posts as |post|}}
+      <li><a href='#' class='personal-posts'>{{title}}</a></li>
+      {{/each}}
+      {{else}}
+      <li><a href='#' class='personal-posts'>No personal posts available</a></li>
+      {{/if}}
+    </ul>
   </div>
-  {{/each}}
 </div>
