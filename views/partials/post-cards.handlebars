@@ -2,7 +2,7 @@
 <div class='card'>
   <div class='card-header flex-row justify-space-between p-2'>
     <h3>{{title}}</h3>
-    <p>Posted by {{user.name}} on 5/8/2020</p>
+    <p>Posted by {{user.name}} on {{format_date createdAt}}</p>
   </div>
   <p class='card-body p-2'>{{post_content}}</p>
 </div>
