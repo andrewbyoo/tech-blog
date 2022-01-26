@@ -25,8 +25,7 @@ Post.init(
         model: 'user',
         key: 'id',
         unique: false
-      },
-      onDelete: 'cascade'
+      }
     }
   },
   {
