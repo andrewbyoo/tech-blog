@@ -11,6 +11,9 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
+      req.session.userId = dbUserData.id;
+      req.session.name = dbUserData.name;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
@@ -37,7 +40,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -47,6 +50,9 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.userId = dbUserData.id;
+      req.session.name = dbUserData.name;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
       console.log(
         '🚀 ~ file: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie',
