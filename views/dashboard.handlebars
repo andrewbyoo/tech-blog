@@ -1,0 +1,25 @@
+<div class="p-4">
+  <div class="card">
+    <div class="card-header">
+      <h3>Got something to post? Post it here!</h3>
+    </div>
+    <div class="card-body">
+      <form>
+        <label for="title">Title:</label>
+        <textarea id="title" rows="1" class="form-input"></textarea>
+        <label for="post_content">Content:</label>
+        <textarea id="post_content" rows="3" class="form-input"></textarea>
+        <input type="submit" class="w-100">
+      </form>
+    </div>
+  </div>
+
+  {{!-- Loads a card for each post in the database --}}
+  {{#each posts as |post|}}
+  {{> post-cards}}
+  {{else}}
+  <div class='card'>
+    <p class='text-center'>There are currently no posts. Be the first one!</p>
+  </div>
+  {{/each}}
+</div>
