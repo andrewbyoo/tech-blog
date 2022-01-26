@@ -17,5 +17,7 @@
   </div>
 
   {{!-- TODO: Add conditional to only load if there are any posts --}}
+  {{#each posts as |post|}}
   {{> post-cards}}
+  {{/each}}
 </div>
