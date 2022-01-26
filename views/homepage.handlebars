@@ -1,12 +1,11 @@
 <div class="p-4">
-  {{!-- TODO: This card to only be shown when logged in --}}
+  {{#if loggedIn}}
   <div class="card">
     <div class="card-header">
       <h3>Got something to post? Post it here!</h3>
     </div>
     <div class="card-body">
-      {{!-- TODO: Action should be the / path for where data will be sent to --}}
-      <form action="/">
+      <form>
         <label for="title">Title:</label>
         <textarea id="title" rows="1" class="form-input"></textarea>
         <label for="post_content">Content:</label>
@@ -15,6 +14,7 @@
       </form>
     </div>
   </div>
+  {{/if}}
 
   {{!-- Loads a card for each post in the database --}}
   {{#each posts as |post|}}
