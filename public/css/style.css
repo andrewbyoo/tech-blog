@@ -18,14 +18,14 @@ header {
 }
 
 /* Removes underline on links, sets text color, and margin size */
-header h1, nav a {
+header h1, a {
     text-decoration: none;
     color: #fff;
     margin: 0px 5px;
 }
 
 /* Sets a glowing effect on text on hover */
-nav a:hover {
+a:hover {
     color: #fff;
     text-shadow: 0 0 5px #fff;
 }
@@ -39,6 +39,6 @@ nav a:hover {
   border-radius: 0.3rem;
   border-style: double;
   border-width: thick;
-  background-color: #577a7c;
+  background-color: #376F7B;
   color: #e3e4e3;
 }
