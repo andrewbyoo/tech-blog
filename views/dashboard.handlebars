@@ -20,7 +20,7 @@
     <ul>
       {{#if posts.length}}
       {{#each posts as |post|}}
-      <li><a href='#' class='personal-posts'>{{title}}</a></li>
+      <li><a href='/dashboard/post/{{id}}' class='personal-posts'>{{title}}</a></li>
       {{/each}}
       {{else}}
       <li><a href='#' class='personal-posts'>No personal posts available</a></li>
