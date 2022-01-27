@@ -18,7 +18,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     const dbPostData = await Post.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: ['password'] } }], where: User.id = req.session.userId });
     const post = dbPostData.get({ plain: true });
     console.log(post)
-    res.render('user-post', { ...post, loggedIn: req.session.loggedIn })
+    res.render('user-post', { ...post, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err)
