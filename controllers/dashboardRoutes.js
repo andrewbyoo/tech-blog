@@ -13,4 +13,16 @@ router.get('/', withAuth, async (req, res) => {
   };
 });
 
+router.get('/post/:id', withAuth, async (req, res) => {
+  try {
+    const dbPostData = await Post.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: ['password'] } }], where: User.id = req.session.userId });
+    const post = dbPostData.get({ plain: true });
+    console.log(post)
+    res.render('user-post', { ...post, loggedIn: req.session.loggedIn })
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+})
+
 module.exports = router;
