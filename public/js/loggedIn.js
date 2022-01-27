@@ -17,9 +17,10 @@ document.querySelector('#logout').addEventListener('click', logout);
 // Add post
 const addFormHandler = async (event) => {
   event.preventDefault();
+  event.stopPropagation();
 
   const title = document.getElementById('title').value.trim();
-  const post_content = document.getElementById('post-content').value.trim();
+  const post_content = document.getElementById('post_content').value.trim();
 
   const response = await fetch(`/api/posts`, {
     method: 'POST',
@@ -38,7 +39,7 @@ const addFormHandler = async (event) => {
 };
 
 document
-  .getElementById('add-form')
+  .querySelector('#add-form')
   .addEventListener('submit', addFormHandler);
 
 // Edit post
@@ -46,11 +47,11 @@ const updateFormHandler = async (event) => {
   event.preventDefault();
 
   const id = document.querySelector('#post-id').value;
-  const editedContent = document.querySelector('#post-edit').value.trim();
+  const post_content = document.querySelector('#post-edit').value.trim();
 
   const response = await fetch(`/api/posts/${id}`, {
     method: 'PUT',
-    body: JSON.stringify({ post_content: editedContent }),
+    body: JSON.stringify({ post_content }),
     headers: { 'Content-Type': 'application/json' },
   });
 
@@ -62,5 +63,5 @@ const updateFormHandler = async (event) => {
 };
 
 document
-  .querySelector('.edit-form')
+  .querySelector('#edit-form')
   .addEventListener('submit', updateFormHandler);
