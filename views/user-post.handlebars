@@ -1,3 +1,4 @@
+<p style='visibility: hidden;' id='post-id'>{{id}}</p>
 <div class='p-4'>
   <div class='card'>
     <div class='card-header flex-row justify-space-between p-2'>
@@ -6,8 +7,8 @@
     </div>
     <div class='card-body p-2'>
       <p>{{post_content}}</p>
-      <a href="/dashboard/post/{{id}}/edit" class="btn">Edit</a>
-      <a href="#" class="btn">Delete</a>
+      <a href='/dashboard/post/{{id}}/edit' class='btn'>Edit</a>
+      <button class='btn' id='deleteBtn'>Delete</button>
     </div>
   </div>
   <div class='card'>
@@ -22,3 +23,5 @@
     </div>
   </div>
 </div>
+
+<script src='/js/deletePost.js'></script>
