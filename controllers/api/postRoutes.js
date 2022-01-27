@@ -14,4 +14,16 @@ router.get('/', async (req, res) => {
   };
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const dbPostData = await Post.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }] });
+    const post = dbPostData.get({ plain: true });
+    console.log(post)
+    res.status(200).json(post)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
 module.exports = router;
