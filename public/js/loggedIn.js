@@ -17,7 +17,6 @@ document.querySelector('#logout').addEventListener('click', logout);
 // Add post
 const addFormHandler = async (event) => {
   event.preventDefault();
-  event.stopPropagation();
 
   const title = document.getElementById('title').value.trim();
   const post_content = document.getElementById('post_content').value.trim();
@@ -46,7 +45,7 @@ document
 const updateFormHandler = async (event) => {
   event.preventDefault();
 
-  const id = document.querySelector('#post-id').value;
+  const id = document.querySelector('#post-id').innerHTML;
   const post_content = document.querySelector('#post-edit').value.trim();
 
   const response = await fetch(`/api/posts/${id}`, {
