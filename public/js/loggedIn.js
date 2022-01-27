@@ -14,6 +14,33 @@ const logout = async () => {
 
 document.querySelector('#logout').addEventListener('click', logout);
 
+// Add post
+const addFormHandler = async (event) => {
+  event.preventDefault();
+
+  const title = document.getElementById('title').value.trim();
+  const post_content = document.getElementById('post-content').value.trim();
+
+  const response = await fetch(`/api/posts`, {
+    method: 'POST',
+    body: JSON.stringify({
+      title,
+      post_content
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace(`/dashboard`);
+  } else {
+    alert(response.statusText);
+  }
+};
+
+document
+  .getElementById('add-form')
+  .addEventListener('submit', addFormHandler);
+
 // Edit post
 const updateFormHandler = async (event) => {
   event.preventDefault();
@@ -32,7 +59,6 @@ const updateFormHandler = async (event) => {
   } else {
     alert('Could not update post.');
   }
-
 };
 
 document
