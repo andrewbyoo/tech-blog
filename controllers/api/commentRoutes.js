@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const dbCommentData = await Comment.findAll({ include: [{ model: Post }] });
+    const dbCommentData = await Comment.findAll({ include: { model: Post } });
     const comments = dbCommentData.map(comment => comment.get({ plain: true }));
     console.log(comments)
     res.status(200).json(comments)
@@ -29,5 +29,15 @@ router.post('/', withAuth, async (req, res) => {
   };
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const dbCommentData = await Comment.findByPk(req.params.id, { include: { model: Post } });
+    const comment = dbCommentData.get({ plain: true });
+    res.status(200).json(comment)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
 
 module.exports = router;
