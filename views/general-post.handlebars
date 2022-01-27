@@ -1,0 +1,30 @@
+<p style='display: none;' id='post-id'>{{id}}</p>
+<div class='p-4'>
+  <div class='card'>
+    <div class='card-header flex-row justify-space-between p-2'>
+      <h3>{{title}}</h3>
+      <p>Posted by {{user.name}} on {{format_date createdAt}}</p>
+    </div>
+    <div class='card-body p-2'>{{post_content}}</div>
+  </div>
+  <div class='card'>
+    <div class='card-header'>
+      <h5>Comment:</h5>
+    </div>
+    <div class='card-body'>
+      <form class='form' id='comment-form'>
+        <textarea id='comment_content' rows='3' class='form-input'></textarea>
+        <input type='submit' class='w-100' />
+      </form>
+    </div>
+  </div>
+  {{#each comments as |comment|}}
+  {{> comments}}
+  {{else}}
+  <div class='card'>
+    <p class='text-center'>There are currently no comments. Be the first one!</p>
+  </div>
+  {{/each}}
+</div>
+
+<script src='/js/deletePost.js'></script>
