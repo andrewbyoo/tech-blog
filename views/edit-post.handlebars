@@ -1,0 +1,12 @@
+<div class='p-4'>
+  <div class='card'>
+    <div class='card-header flex-row justify-space-between p-2'>
+      <h3>{{title}}</h3>
+      <p>Posted on {{format_date createdAt}}</p>
+    </div>
+    <form class='card-body p-2'>
+      <textarea id="post-edit" rows="3" class='form-input'>{{post_content}}</textarea>
+      <input type='submit' value='Save' class="w-100"></input>
+    </form>
+  </div>
+</div>
