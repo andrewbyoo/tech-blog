@@ -46,3 +46,7 @@ header h1, .nav-links {
 .personal-posts {
   color: #376F7B;
 }
+
+.card-links:hover {
+  text-decoration: none;
+}
