@@ -18,8 +18,17 @@ router.get('/:id', async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }] });
     const post = dbPostData.get({ plain: true });
-    console.log(post)
     res.status(200).json(post)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
+router.put('/:id', async (req, res) => {
+  try {
+    await Post.update({ post_content: req.body.post_content }, { where: { id: req.params.id } });
+    res.status(200).json(req.body)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
