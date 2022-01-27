@@ -17,12 +17,12 @@ router.get('/', async (req, res) => {
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    await Post.create({
+    const newPost = await Post.create({
       title: req.body.title,
       post_content: req.body.post_content,
       user_id: req.session.userId
     });
-    res.status(200).json(req.body)
+    res.status(200).json(newPost);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -42,8 +42,8 @@ router.get('/:id', async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    await Post.update({ post_content: req.body.post_content }, { where: { id: req.params.id } });
-    res.status(200).json(req.body)
+    const editPost = await Post.update({ post_content: req.body.post_content }, { where: { id: req.params.id } });
+    res.status(200).json(editPost)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
