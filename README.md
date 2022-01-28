@@ -42,7 +42,7 @@ The visual shows the app running on a local server.
 Please click [here](https://youtu.be/PIIWdPOa4Cs) for a video demo.
 
 ## Deployed Link
-https://git.heroku.com/andrewbyoo-tech-blog.git
+https://andrewbyoo-tech-blog.herokuapp.com/
 
 ## License
 This application is covered under the MIT license.
