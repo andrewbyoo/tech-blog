@@ -11,6 +11,7 @@ As a developer who writes about tech, I want a CMS-style blog site so that I can
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Link](#link)
 - [License](#license)
 - [Features](#features)
 - [Tests](#tests)
@@ -39,6 +40,9 @@ The visual shows the app running on a local server.
 ![Tech Blog Static Visual](./assets/tech-blog-static-visual.png)
 
 Please click [here](https://youtu.be/PIIWdPOa4Cs) for a video demo.
+
+## Deployed Link
+https://git.heroku.com/andrewbyoo-tech-blog.git
 
 ## License
 This application is covered under the MIT license.
