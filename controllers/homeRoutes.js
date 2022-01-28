@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    const dbPostData = await Post.findAll({ include: [{ model: User, attributes: { exclude: 'password' }  }] });
+    const dbPostData = await Post.findAll({ include: { model: User, attributes: { exclude: 'password' }  } });
     const posts = dbPostData.map(post => post.get({ plain: true }));
     res.render('homepage', { posts, loggedIn: req.session.loggedIn });
   } catch (err) {
@@ -32,7 +32,7 @@ router.get('/signup', (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
-    const dbPostData = await Post.findByPk(req.params.id);
+    const dbPostData = await Post.findByPk(req.params.id, { include: [{ model: Comment, include: { model: User, attributes: { exclude: 'password' } } }, { model: User, attributes: { exclude: 'password' } }] });
     const post = dbPostData.get({ plain: true });
     res.render('general-post', { ...post, loggedIn: req.session.loggedIn });
   } catch (err) {
