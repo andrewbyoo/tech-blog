@@ -41,7 +41,7 @@ The visual shows the app running on a local server.
 
 Please click [here](https://youtu.be/PIIWdPOa4Cs) for a video demo.
 
-## Deployed Link
+## Link
 https://andrewbyoo-tech-blog.herokuapp.com/
 
 ## License
